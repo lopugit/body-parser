@@ -50,7 +50,7 @@
     "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --require test/support/env --reporter dot --check-leaks test/",
 		"test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --require test/support/env --reporter spec --check-leaks test/",
 		"commit": "git add . ; git commit -m 'ready'",
-    "push": "npm run commit ; git push origin dev",
-		"pull": "git pull origin dev"
+    "push": "npm run commit ; git push origin HEAD",
+		"pull": "git pull origin HEAD"
   }
 }
