@@ -13,6 +13,14 @@ describe('bodyParser.json()', function () {
       .set('Content-Type', 'application/json')
       .send('{"user":"tobi"}')
       .expect(200, '{"user":"tobi"}', done)
+	})
+	
+  it('should parse flatted JSON', function (done) {
+    request(createServer())
+      .post('/')
+      .set('Content-Type', 'application/json')
+      .send('[{"user":"1"},"tobi"]')
+      .expect(200, '{"user":"tobi"}', done)
   })
 
   it('should handle Content-Length: 0', function (done) {
